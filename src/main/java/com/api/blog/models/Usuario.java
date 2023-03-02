@@ -19,7 +19,7 @@ public class Usuario {
 
     private String firstName;
 
-    private String LastName;
+    private String lastName;
 
     private String email;
 
@@ -49,11 +49,11 @@ public class Usuario {
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getEmail() {
