@@ -24,8 +24,13 @@ public class Usuario {
 
     private String email;
 
-    @OneToMany
-    @JoinColumn(name = "codigo_postagem")
+    /**
+     * o mappedBy na anotação @OneToMany indica que o relacionamento é bidirecional,
+     * e que a propriedade author na classe Postagem é a responsável por mapear o
+     * relacionamento com a classe Usuario.
+     */
+
+    @OneToMany(mappedBy = "author")
     private List<Postagem> postagens;
 
     public Long getId() {

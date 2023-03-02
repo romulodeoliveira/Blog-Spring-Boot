@@ -1,9 +1,15 @@
 package com.api.blog.models;
 
+import org.hibernate.annotations.ManyToAny;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,6 +23,18 @@ public class Postagem {
     private String title;
 
     private String body;
+
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Usuario author;
+
+    public void setAuthor(Usuario author) {
+        this.author = author;
+    }
+
+    public Usuario getAuthor() {
+        return author;
+    }
 
     public long getId() {
         return id;
